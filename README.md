@@ -1,12 +1,13 @@
 # Assignment3
 
-This is updated version login/registe_page.
+This is updated version login/register_page.
 I am using local mongodb server, please use "server" folder to backend, and add dependencies.
 
 # Updates:
 
 Encryption on password
 Added google Sign Up/Log in and search from database
+
 Added 3D Password pattern
 
 Need to fix Error handling function, if client-server is off.
