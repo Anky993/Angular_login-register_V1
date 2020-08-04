@@ -1,0 +1,108 @@
+<div class="container-fluid login">
+    <div *ngIf = "welmsg" class="text-success">{{welcome}}</div>
+    <div *ngIf = "errmsg" class="text-danger">{{err}}</div>
+    <h2>Registration Page</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+	    	    <span class="input-group-text"> <mat-icon>person</mat-icon> </span>
+            </div>
+            <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name"
+            [ngClass] = "{'is-invalid':
+            registerForm.get('FirstName').touched && registerForm.get('FirstName').invalid}">
+        </div>
+        <div *ngIf="registerForm.get('FirstName').invalid && (registerForm.get('FirstName').dirty || registerForm.get('FirstName').touched)"
+    class="text-danger">
+        <div *ngIf="registerForm.get('FirstName').errors.minlength">
+            Name must be at least 3 characters long.
+          </div>
+          <div *ngIf="registerForm.get('FirstName').errors.maxlength">
+            Name must be at less than 10 characters long.
+          </div>
+          <div *ngIf="registerForm.get('FirstName').errors.required">First Name is Required</div>
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+	    	    <span class="input-group-text"> <mat-icon>account_circle</mat-icon> </span>
+            </div>
+            <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name">
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+	    	    <span class="input-group-text"> <mat-icon>email</mat-icon> </span>
+            </div>
+
+        <input type="email" class="form-control" formControlName = "Email" placeholder="Enter Email" [ngClass] = "{'is-invalid':
+        registerForm.get('Email').touched && registerForm.get('Email').invalid}">
+        </div>
+        <div *ngIf = "registerForm.get('Email').touched && registerForm.get('Email').invalid" class="text-danger">
+            <div *ngIf="registerForm.get('Email').errors.required">Email is Required</div>
+                <div *ngIf="registerForm.get('Email').errors.email">Email must be valid</div>
+        </div>
+
+        <!-- <div class="form-group input-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" class="input-group-text">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div> -->
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+	    	    <span class="input-group-text"> <mat-icon>vpn_key</mat-icon> </span>
+            </div>
+            <input type="password" class="form-control" formControlName ="Password" placeholder="Enter Password" [ngClass]="{'is-invalid':
+            registerForm.get('Password').touched && registerForm.get('Password').invalid}">
+        </div>
+        <div *ngIf = "registerForm.get('Password').touched && registerForm.get('Password').invalid" class="text-danger">
+            <div *ngIf="registerForm.get('Password').errors.required">Password is Required</div>
+            <div *ngIf="registerForm.get('Password').errors.pattern">Password is invalid</div>
+        </div>
+        <!-- <div *ngIf = "registerForm.get('Password').touched" class="text-danger">
+          <div *ngIf="registerForm.get('Password').errors.pattern">Password is invalid</div>
+      </div> -->
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+	    	    <span class="input-group-text"> <mat-icon>vpn_key</mat-icon> </span>
+            </div>
+            <input type="password" class="form-control" formControlName = "ConfirmPassword" placeholder="Confirm Password" [ngClass]="{'is-invalid':
+            registerForm.get('ConfirmPassword').touched && registerForm.get('ConfirmPassword').invalid}">
+        </div>
+        <div *ngIf = "registerForm.get('Password').value != registerForm.get('ConfirmPassword').value &&
+        registerForm.get('ConfirmPassword').touched"
+         class="text-danger">
+         Password must be same</div>
+            <div *ngIf = "registerForm.get('ConfirmPassword').touched &&
+            registerForm.get('ConfirmPassword').invalid && registerForm.get('Password').invalid" class="text-danger">Password is required
+        </div>
+
+        <button [disabled]= '!registerForm.valid' type="submit" class="btn btn-primary btn-block" >Register</button>
+           <!-- <div class="g-signin2" data-onsuccess="googleLogin" data-theme="dark"></div> -->
+
+           <div>
+          <p>
+            Already has account?
+            <a routerLink="/login" routerLinkActive="active">Log in</a>
+
+            </p>
+        </div>
+
+    </form>
+    <div class="row">
+        <div id="googleBtn" class="col-md-12">
+          <button class="btn btn-lg btn-google btn-block text-uppercase btn-outline">
+            <img src="https://img.icons8.com/color/16/000000/google-logo.png">
+            Sign Up Using google</button>
+          <!-- <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="#">
+            <img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</a> -->
+          </div>
+    </div>
+
+    <!-- <button id="googleBtn">Google</button> -->
+</div>

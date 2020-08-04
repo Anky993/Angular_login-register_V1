@@ -1,0 +1,28 @@
+
+<div>
+  <!-- <button class="btn btn-info" (click)="deleteAll()">Delete ALL</button>
+
+  <form [formGroup]= "updateForm"> -->
+
+<table class="table table-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let student of data">
+        <td scope="col">{{student._id}}</td>
+        <td scope="col">{{student.FirstName}}</td>
+        <td scope="col">{{student.LastName}}</td>
+        <td scope="col">{{student.Email}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>

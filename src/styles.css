@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;
+  background-image: linear-gradient(rgba(62,62,62,0.7), rgba(0, 0, 0, 0.575)), url(../black.jpg);
+  background-attachment: fixed;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
