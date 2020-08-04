@@ -3,7 +3,7 @@
 This is updated version login/registe_page.
 I am using local mongodb server, please use "server" folder to backend, and add dependencies.
 
-# Upadtes:
+# Updates:
 
 Encryption on password
 Added google Sign Up/Log in and search from database
