@@ -1,5 +1,15 @@
 # Assignment3
 
+This is updated version login/registe_page.
+I am using local mongodb server, please use "server" folder to backend, and add dependencies.
+
+# Upadtes:
+
+Encryption on password
+Added google Sign Up/Log in and search from database
+
+Need to fix Error handling function, if client-server is off.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
 ## Development server
